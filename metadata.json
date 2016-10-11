@@ -1,0 +1,11 @@
+{
+    "name": "newiep/selfvagrant",
+    "versions": [{
+        "version": "0.0.1",
+        "providers": [{
+            "name": "virtualbox",
+            "url": "~/QiniuSync/vagrant.box"   //指定box所在地址，file 或 url
+            // "url": "http://oe1ur4dwd.bkt.clouddn.com/vagrant.box"
+        }]
+    }]
+}
