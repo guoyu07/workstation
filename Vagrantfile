@@ -16,6 +16,12 @@ aliasesPath = confDir + "/aliases"
 # you're doing.
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  # Prevent TTY Errors
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
+  # Allow SSH Agent Forward from The Box
+  config.ssh.forward_agent = true
+  
   if File.exist? aliasesPath then
       config.vm.provision "file", source: aliasesPath, destination: "~/.bash_aliases"
   end
