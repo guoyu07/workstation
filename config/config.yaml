@@ -1,0 +1,27 @@
+---
+ip: "192.168.33.11"
+memory: 1024
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - host: 50000
+#       guest: 5000
+#     - host: 7777
+#       guest: 777
+#       protocol: udp

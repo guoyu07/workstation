@@ -1,0 +1,38 @@
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias h='cd ~'
+alias c='clear'
+alias art=artisan
+
+alias phpspec='vendor/bin/phpspec'
+alias phpunit='vendor/bin/phpunit'
+alias serve=serve-nginx
+
+function serve-nginx() {
+    if [[ "$1" && "$2" ]]
+    then
+        sudo dos2unix /vagrant/scripts/server.sh
+        sudo bash /vagrant/scripts/server.sh "$1" "$2" ${3:-5.6}
+    else
+        echo "Error: missing required parameters."
+        echo "Usage: "
+        echo "  serve server_name root_path"
+    fi
+}
+
+function serve-hhvm() {
+    if [[ "$1" && "$2" ]]
+    then
+        sudo dos2unix /vagrant/scripts/serve-hhvm.sh
+        sudo bash /vagrant/scripts/serve-hhvm.sh "$1" "$2" 80
+    else
+        echo "Error: missing required parameters."
+        echo "Usage: "
+        echo "  serve-hhvm domain path"
+    fi
+}
+
+function artisan() {
+    php artisan "$@"
+}

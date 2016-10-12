@@ -31,7 +31,7 @@
 ```
   vagrant box list
 ```
-如果看到  newiep/selfvagrant (virtualbox, 0.0.1) 的列表，证明添加成功
+如果看到  newiep/workstation (virtualbox, 0.0.1) 的列表，证明添加成功
 
 ### 启动环境
 
