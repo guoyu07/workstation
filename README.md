@@ -1,4 +1,4 @@
-# selfvagrant
+# workstation
 使用 vagrant 搭建 php 开发环境
 
 # 从无到有
@@ -14,7 +14,7 @@
 
 ### 克隆仓库到本地
 ```
-  git clone git@github.com:newiep/selfvagrant.git vagrant
+  git clone git@github.com:newiep/workstation.git vagrant
   cd vagrant
 ```
 

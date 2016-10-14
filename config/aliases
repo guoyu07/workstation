@@ -1,15 +1,57 @@
 alias ..="cd .."
 alias ...="cd ../.."
+_=sudo
 
 alias h='cd ~'
 alias c='clear'
 alias art=artisan
+alias l='ls -lah'
+alias la='ls -lAh'
+alias ll='ls -lh'
+alias ls='ls -G'
+alias lsa='ls -lah'
 
 alias phpspec='vendor/bin/phpspec'
 alias phpunit='vendor/bin/phpunit'
-alias serve=serve-nginx
 
-function serve-nginx() {
+# git
+alias g=git
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+alias gcam='git commit -a -m'
+alias gcb='git checkout -b'
+alias gcf='git config --list'
+alias gcm='git checkout master'
+alias gcmsg='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gf='git fetch'
+alias gfa='git fetch --all --prune'
+alias ggpush='git push origin $(git_current_branch)'
+alias ghh='git help'
+alias glg='git log --stat'
+alias glgg='git log --graph'
+alias glo='git log --oneline --decorate'
+alias glog='git log --oneline --decorate --graph'
+alias gm='git merge'
+alias gp='git push'
+alias gr='git remote'
+alias gra='git remote add'
+alias grb='git rebase'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
+alias gru='git reset --'
+alias gsb='git status -sb'
+alias gss='git status -s'
+alias gst='git status'
+
+
+function serve() {
     if [[ "$1" && "$2" ]]
     then
         sudo dos2unix /vagrant/scripts/server.sh
@@ -18,18 +60,6 @@ function serve-nginx() {
         echo "Error: missing required parameters."
         echo "Usage: "
         echo "  serve server_name root_path"
-    fi
-}
-
-function serve-hhvm() {
-    if [[ "$1" && "$2" ]]
-    then
-        sudo dos2unix /vagrant/scripts/serve-hhvm.sh
-        sudo bash /vagrant/scripts/serve-hhvm.sh "$1" "$2" 80
-    else
-        echo "Error: missing required parameters."
-        echo "Usage: "
-        echo "  serve-hhvm domain path"
     fi
 }
 
