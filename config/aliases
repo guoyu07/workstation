@@ -1,6 +1,7 @@
 alias ..="cd .."
 alias ...="cd ../.."
-_=sudo
+alias _=sudo
+alias ls='ls --color=auto'
 
 alias h='cd ~'
 alias c='clear'
@@ -8,7 +9,6 @@ alias art=artisan
 alias l='ls -lah'
 alias la='ls -lAh'
 alias ll='ls -lh'
-alias ls='ls -G'
 alias lsa='ls -lah'
 
 alias phpspec='vendor/bin/phpspec'
@@ -31,6 +31,7 @@ alias gd='git diff'
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
 alias ggpush='git push origin $(git_current_branch)'
+alias ggpull='git pull origin $(git_current_branch)'
 alias ghh='git help'
 alias glg='git log --stat'
 alias glgg='git log --graph'
@@ -50,6 +51,9 @@ alias gsb='git status -sb'
 alias gss='git status -s'
 alias gst='git status'
 
+function git_current_branch(){
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 
 function serve() {
     if [[ "$1" && "$2" ]]
